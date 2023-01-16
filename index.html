@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="timer()">
+
+    <!-- onmouseout="timerId = setTimeout(timer, 2000)"   -  убирание дергание картинок при резком отведении и наведении мышки на картинку -->
+    <section onmouseover="stop()" onmouseout="timerId = setTimeout(timer, 2000)">
+        <h1 id="title">https://www.google.com</h1>
+        <div class="inner">
+            <div id="id-1">Заголовок слайда 1</div>
+            <a id="id0" href="#" target="_blank">
+                1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque aperiam fugiat deleniti cupiditate quidem, ducimus non fugit, soluta necessitatibus minus magnam, esse suscipit impedit facilis ad voluptate a cumque corporis?
+            </a>
+        </div>
+        <img id="id1" src="images/img1b.jpg" alt="">
+
+
+        <div class="click" onclick="before()" id="before">
+            <span class="material-icons">
+                navigate_before
+            </span>
+        </div>
+
+        <div class="click" onclick="next()" id="next">
+            <span class="material-icons">
+                navigate_next
+            </span>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

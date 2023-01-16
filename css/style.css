@@ -1,0 +1,69 @@
+
+section{
+    width: 550px;
+    height: 400px;
+    margin: 50px auto;
+    transition: brightness .4s linear;
+    position: relative;
+}
+
+section:hover{
+    filter: brightness(80%);
+}
+
+.material-icons{
+    font-size: 70px;
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 0 20px crimson, 0 0 35px crimson, 0 0 40px crimson, 0 0 50px crimson, 0 0 75px crimson;
+}
+
+.click{
+    /* border: 1px solid teal; */
+    width: 70px;
+    cursor: pointer;
+}
+
+#before{
+    position: absolute;
+    left: -72px;
+    top: 150px;
+}
+
+#next{
+    position: absolute;
+    left: 550px;
+    top: 150px;
+}
+
+.inner{
+    background-color: rgba(128, 128, 128, 0.556);
+    color: white;
+    padding: 5px 15px;
+    
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.inner>div{
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: rgb(255, 249, 66);
+}
+
+#title{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    
+    color: white;
+    background-color: rgba(128, 128, 128, 0.556);
+}
