@@ -46,33 +46,17 @@ let link = [
 ];
 
         
-        let n = 0, max = link.length-1, min = 0,  t;
+        let n = 0, max = link.length-1;
         let timerId, str, pos, res;
 
         function timer() {
             //условие для перехода слайдов в начало
-            if (n > max){
+            if (++n > max){
                 n = 0;
             }
 
-            t = n; //фикс с перескачиванием слайда через один
+            changeSlide();
 
-            //вывод название сайта в левом вверхнем углу
-            str = link[n].site;
-            pos = str.indexOf(".");     
-            res = str.substring(pos+1, str.length); 
-            document.getElementById('title').innerHTML = res;
-
-            //вывод заголовка слайда
-            document.getElementById('id-1').innerHTML = link[n].name;
-
-            //добавление описание слайда и ссылки
-            document.getElementById('id0').href = link[n].site;
-            document.getElementById('id0').innerHTML = link[n].description;
-
-            //вывод картинки
-            document.getElementById('id1').src = `images/${link[n++].pic}`;
-            
             //авто-slider через 2 секунды
             timerId = setTimeout(timer, 2000);
         }
@@ -84,40 +68,40 @@ let link = [
 
         //переход на следующий слайд
         function next() {
-            t++;
-            if (t > max){
-                t = 0;
+            if (n >= max){
+                n = 0;
+            } else {
+                n++;
             }
 
-            n = t; //фикс с автопереходом слайдов function timer()
-
-            str = link[t].site;
-            pos = str.indexOf(".");     
-            res = str.substring(pos+1, str.length); 
-            document.getElementById('title').innerHTML = res;
-
-            document.getElementById('id-1').innerHTML = link[t].name;
-            document.getElementById('id0').href = link[t].site;
-            document.getElementById('id0').innerHTML = link[t].description;
-            document.getElementById('id1').src = `images/${link[t].pic}`;
+            changeSlide();
         }
         
         //переход на предыдущий слайд
         function before() {
-            t--;
-            if (t < min){
-                t = 5;
+            if (n > 0){
+                n--;
+            } else {
+                n = max;
             }
 
-            n = t; //фикс с автопереходом слайдов function timer()
+            changeSlide();
+        }
 
-            str = link[t].site;
-            pos = str.indexOf(".");     
-            res = str.substring(pos+1, str.length); 
-            document.getElementById('title').innerHTML = res;
-
-            document.getElementById('id-1').innerHTML = link[t].name;
-            document.getElementById('id0').href = link[t].site;
-            document.getElementById('id0').innerHTML = link[t].description;
-            document.getElementById('id1').src = `images/${link[t].pic}`;
+        function changeSlide() {
+             //вывод название сайта в левом вверхнем углу
+             str = link[n].site;
+             pos = str.indexOf(".");     
+             res = str.substring(pos+1, str.length); 
+             document.getElementById('title').innerHTML = res;
+ 
+             //вывод заголовка слайда
+             document.getElementById('id-1').innerHTML = link[n].name;
+ 
+             //добавление описание слайда и ссылки
+             document.getElementById('id0').href = link[n].site;
+             document.getElementById('id0').innerHTML = link[n].description;
+ 
+             //вывод картинки
+             document.getElementById('id1').src = `images/${link[n].pic}`;
         }

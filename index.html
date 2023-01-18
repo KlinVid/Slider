@@ -9,15 +9,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="timer()">
+<!-- onload="timerId = setTimeout(timer, 2000);" - задержка перед в 2 секунды выполнением функции timer() -->
+<body onload="timerId = setTimeout(timer, 2000);">
 
     <!-- onmouseout="timerId = setTimeout(timer, 2000)"   -  убирание дергание картинок при резком отведении и наведении мышки на картинку -->
     <section onmouseover="stop()" onmouseout="timerId = setTimeout(timer, 2000)">
-        <h1 id="title">https://www.google.com</h1>
+        <h1 id="title">google.com</h1>
         <div class="inner">
             <div id="id-1">Заголовок слайда 1</div>
             <a id="id0" href="#" target="_blank">
-                1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque aperiam fugiat deleniti cupiditate quidem, ducimus non fugit, soluta necessitatibus minus magnam, esse suscipit impedit facilis ad voluptate a cumque corporis?
+                Крупнейшая в мире поисковая система интернета, принадлежащая корпорации Google Inc.
             </a>
         </div>
         <img id="id1" src="images/img1b.jpg" alt="">
